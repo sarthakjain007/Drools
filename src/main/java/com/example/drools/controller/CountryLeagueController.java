@@ -16,7 +16,7 @@ public class CountryLeagueController {
 	@Autowired
 	private KieContainer kieContainer;
 
-	@RequestMapping(value = "/getLeagueWinner", method = RequestMethod.GET, produces = "application/json")
+	@RequestMapping(value = "/getLeagueWinner", method = RequestMethod.GET)
 	public String getLeagueWinner(@RequestParam(required = true) String country, @RequestParam(required = true) String year) {
 		KieSession kieSession = kieContainer.newKieSession();
 		FootballClubRequest footballRequest = new FootballClubRequest(country , year);
